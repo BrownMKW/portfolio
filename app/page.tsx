@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import { portfolio } from "@/data/portfolio";
 import ProjectCard from "@/components/ProjectCard";
+import SectionHeader from "@/components/SectionHeader";
+import { portfolio } from "@/data/portfolio";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
             </h1>
 
             <p className="mt-5 text-sm font-medium uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400 lg:whitespace-nowrap">
-              Data Science and Analytics · Machine Learning · Artificial Intelligence
+              Data Science and Analytics · Machine Learning · Artificial
+              Intelligence
             </p>
 
             <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-600 dark:text-zinc-300">
@@ -60,7 +62,6 @@ export default function Home() {
               >
                 GitHub
               </a>
-
             </div>
           </div>
 
@@ -83,15 +84,10 @@ export default function Home() {
         id="projects"
         className="mx-auto max-w-6xl px-6 py-24 sm:px-8"
       >
-        <div className="mb-12">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-            Featured Work
-          </p>
-
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Building real AI/ML products.
-          </h2>
-        </div>
+        <SectionHeader
+          label="Featured Work"
+          title="Building real AI/ML products."
+        />
 
         <div className="grid gap-6 md:grid-cols-2">
           {portfolio.featuredProjects.map((project) => (
@@ -112,15 +108,10 @@ export default function Home() {
         className="border-y border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/40"
       >
         <div className="mx-auto max-w-6xl px-6 py-24 sm:px-8">
-          <div className="mb-12">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-              Experience
-            </p>
-
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Industry, research, and academic experience.
-            </h2>
-          </div>
+          <SectionHeader
+            label="Experience"
+            title="Industry, research, and academic experience."
+          />
 
           <div className="space-y-5">
             {portfolio.experience.map((item) => (
@@ -167,15 +158,10 @@ export default function Home() {
         id="education"
         className="mx-auto max-w-6xl px-6 py-24 sm:px-8"
       >
-        <div className="mb-12">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-            Education
-          </p>
-
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Academic background.
-          </h2>
-        </div>
+        <SectionHeader
+          label="Education"
+          title="Academic background."
+        />
 
         <div className="grid gap-6 md:grid-cols-3">
           {portfolio.education.map((item) => (
@@ -237,7 +223,8 @@ export default function Home() {
                   className="block rounded-2xl border border-zinc-200 p-5 transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800"
                 >
                   <p className="text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">
-                    {publication.authorship} · {publication.venue} · {publication.year}
+                    {publication.authorship} · {publication.venue} ·{" "}
+                    {publication.year}
                   </p>
 
                   <h3 className="mt-2 font-semibold leading-6">
@@ -287,7 +274,6 @@ export default function Home() {
           >
             GitHub
           </a>
-
         </div>
       </section>
 
