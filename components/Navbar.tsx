@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { useTheme } from "@teispace/next-themes";
 
 export default function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();

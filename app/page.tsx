@@ -71,6 +71,7 @@ export default function Home() {
                 src="/headshot.png"
                 alt="Martin Brown"
                 fill
+                sizes="(max-width: 640px) 256px, 288px"
                 className="object-cover"
                 priority
               />
