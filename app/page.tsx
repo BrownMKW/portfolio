@@ -117,7 +117,7 @@ export default function Home() {
             {portfolio.experience.map((item) => (
               <article
                 key={`${item.role}-${item.organization}`}
-                className="rounded-3xl border border-zinc-200 bg-white p-7 dark:border-zinc-800 dark:bg-zinc-950"
+                className="rounded-3xl border border-zinc-200 bg-white p-7 transition duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-700"
               >
                 <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
                   <div>
@@ -167,7 +167,7 @@ export default function Home() {
           {portfolio.education.map((item) => (
             <article
               key={`${item.degree}-${item.institution}`}
-              className="rounded-3xl border border-zinc-200 p-7 dark:border-zinc-800"
+              className="rounded-3xl border border-zinc-200 bg-white p-7 transition duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-700"
             >
               <p className="text-sm text-zinc-500">{item.dates}</p>
 
@@ -185,63 +185,63 @@ export default function Home() {
         </div>
       </section>
 
-{/* Project Lab + Research */}
-<section className="border-y border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/40">
-  <div className="mx-auto grid max-w-6xl gap-6 px-6 py-24 sm:px-8 lg:grid-cols-2">
-    <div
-      id="lab"
-      className="rounded-3xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950"
-    >
-      <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-        Project Lab
-      </p>
-
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-        Experiments, coursework, and smaller builds.
-      </h2>
-
-      <p className="mt-5 max-w-xl leading-7 text-zinc-600 dark:text-zinc-300">
-        A separate space for technical exercises, prototypes, academic
-        projects, model experiments, applications, and hands-on learning that
-        support the larger portfolio.
-      </p>
-    </div>
-
-    <div
-      id="research"
-      className="rounded-3xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950"
-    >
-      <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-        Research & Publications
-      </p>
-
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-        Applied AI research and published work.
-      </h2>
-
-      <div className="mt-8 space-y-4">
-        {portfolio.publications.map((publication) => (
-          <a
-            key={publication.title}
-            href={publication.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-2xl border border-zinc-200 p-5 transition duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:hover:border-zinc-700"
+      {/* Project Lab + Research */}
+      <section className="border-y border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/40">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-24 sm:px-8 lg:grid-cols-2">
+          <div
+            id="lab"
+            className="rounded-3xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950"
           >
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">
-              {publication.authorship} · {publication.venue} ·{" "}
-              {publication.year}
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
+              Project Lab
             </p>
 
-            <h3 className="mt-2 font-semibold leading-6">
-              {publication.title}
-            </h3>
-          </a>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+              Experiments, coursework, and smaller builds.
+            </h2>
+
+            <p className="mt-5 max-w-xl leading-7 text-zinc-600 dark:text-zinc-300">
+              A separate space for technical exercises, prototypes, academic
+              projects, model experiments, applications, and hands-on learning
+              that support the larger portfolio.
+            </p>
+          </div>
+
+          <div
+            id="research"
+            className="rounded-3xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950"
+          >
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
+              Research & Publications
+            </p>
+
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+              Applied AI research and published work.
+            </h2>
+
+            <div className="mt-8 space-y-4">
+              {portfolio.publications.map((publication) => (
+                <a
+                  key={publication.title}
+                  href={publication.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-2xl border border-zinc-200 p-5 transition duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:hover:border-zinc-700"
+                >
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">
+                    {publication.authorship} · {publication.venue} ·{" "}
+                    {publication.year}
+                  </p>
+
+                  <h3 className="mt-2 font-semibold leading-6">
+                    {publication.title}
+                  </h3>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Contact */}
       <section
