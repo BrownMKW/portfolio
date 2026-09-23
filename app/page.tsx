@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { portfolio } from "@/data/portfolio";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
@@ -94,37 +95,13 @@ export default function Home() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {portfolio.featuredProjects.map((project) => (
-            <article
+            <ProjectCard
               key={project.name}
-              className="group rounded-3xl border border-zinc-200 bg-zinc-50 p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-2xl font-semibold">{project.name}</h3>
-
-                <span className="rounded-full border border-zinc-300 px-3 py-1 text-xs text-zinc-600 dark:border-zinc-700 dark:text-zinc-300">
-                  {project.status}
-                </span>
-              </div>
-
-              <p className="mt-5 leading-7 text-zinc-600 dark:text-zinc-300">
-                {project.description}
-              </p>
-
-              <div className="mt-7 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-white px-3 py-1 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <p className="mt-8 text-sm font-medium">
-                Case study coming as the project develops →
-              </p>
-            </article>
+              name={project.name}
+              description={project.description}
+              status={project.status}
+              tags={project.tags}
+            />
           ))}
         </div>
       </section>
@@ -285,7 +262,7 @@ export default function Home() {
 
           <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
             Interested in data science and analytics, machine learning, or AI
-            engineering postions.
+            engineering positions.
           </h2>
 
           <p className="mt-5 max-w-2xl leading-7 opacity-70">
