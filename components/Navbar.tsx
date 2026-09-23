@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/80 backdrop-blur-md dark:border-zinc-800/80 dark:bg-zinc-950/80">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8">
         <a
           href="#"
           className="text-sm font-semibold tracking-tight text-zinc-950 dark:text-white"
@@ -18,6 +18,13 @@ export default function Navbar() {
           </a>
 
           <a
+            href="#experience"
+            className="transition hover:text-zinc-950 dark:hover:text-white"
+          >
+            Experience
+          </a>
+
+          <a
             href="#lab"
             className="transition hover:text-zinc-950 dark:hover:text-white"
           >
@@ -25,10 +32,10 @@ export default function Navbar() {
           </a>
 
           <a
-            href="#background"
+            href="#research"
             className="transition hover:text-zinc-950 dark:hover:text-white"
           >
-            Background
+            Research
           </a>
 
           <a
