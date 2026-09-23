@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Navbar from "@/components/Navbar";
+
 const featuredProjects = [
   {
     name: "ATLAS",
@@ -39,41 +42,63 @@ const featuredProjects = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+      <Navbar />
+
+      {/* Hero */}
       <section className="relative overflow-hidden border-b border-zinc-200 dark:border-zinc-800">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.12),_transparent_35%)]" />
 
-        <div className="mx-auto max-w-6xl px-6 py-24 sm:px-8 lg:py-32">
-          <p className="mb-6 text-sm font-medium uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">
-            Data Science and Analytics · Machine Learning · Artificial Intelligence
-          </p>
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 sm:px-8 lg:grid-cols-[1.4fr_0.6fr] lg:py-32">
+          {/* Left side */}
+          <div>
+            <p className="mb-6 text-sm font-medium uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">
+              Data Science and Analytics · Machine Learning · Artificial
+              Intelligence
+            </p>
 
-          <h1 className="max-w-4xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
-            Martin Brown
-          </h1>
+            <h1 className="max-w-4xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
+              Martin Brown
+            </h1>
 
-          <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-600 dark:text-zinc-300">
-            I build data-driven and AI systems that connect modeling, software
-            engineering, experimentation, and real-world problem solving.
-          </p>
+            <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-600 dark:text-zinc-300">
+              I build data-driven and AI systems that connect modeling,
+              software engineering, experimentation, and real-world problem
+              solving.
+            </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
-            >
-              View Projects
-            </a>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="#projects"
+                className="rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
+              >
+                View Projects
+              </a>
 
-            <a
-              href="#contact"
-              className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-900"
-            >
-              Contact
-            </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-900"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+
+          {/* Right side: headshot */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative h-64 w-64 overflow-hidden rounded-full border border-zinc-200 shadow-xl dark:border-zinc-800 sm:h-72 sm:w-72">
+              <Image
+                src="/headshot.png"
+                alt="Martin Brown"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Featured Projects */}
       <section
         id="projects"
         className="mx-auto max-w-6xl px-6 py-24 sm:px-8"
@@ -82,6 +107,7 @@ export default function Home() {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
             Featured Work
           </p>
+
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
             Building real AI/ML products.
           </h2>
@@ -124,15 +150,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Project Lab + Background */}
       <section className="border-y border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/40">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 sm:px-8 lg:grid-cols-2">
-          <div>
+          <div id="lab">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
               Project Lab
             </p>
+
             <h2 className="mt-3 text-3xl font-semibold tracking-tight">
               Experiments, coursework, and smaller builds.
             </h2>
+
             <p className="mt-5 max-w-xl leading-7 text-zinc-600 dark:text-zinc-300">
               A separate space for technical exercises, prototypes, academic
               projects, model experiments, and hands-on learning that support
@@ -140,13 +169,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div>
+          <div id="background">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
               Research & Experience
             </p>
+
             <h2 className="mt-3 text-3xl font-semibold tracking-tight">
               Applied work beyond the portfolio.
             </h2>
+
             <p className="mt-5 max-w-xl leading-7 text-zinc-600 dark:text-zinc-300">
               Industry data science, applied AI research, publications, and
               academic work will live here alongside the product portfolio.
@@ -155,6 +186,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact */}
       <section
         id="contact"
         className="mx-auto max-w-6xl px-6 py-24 sm:px-8"
@@ -165,7 +197,8 @@ export default function Home() {
           </p>
 
           <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Interested in data science and analytics, machine learning, or AI engineering
+            Interested in data science and analytics, machine learning, or AI
+            engineering?
           </h2>
 
           <p className="mt-5 max-w-2xl leading-7 opacity-70">
