@@ -275,14 +275,28 @@ export default function Home() {
             </p>
 
             <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-              Applied AI research beyond the product portfolio.
+              Applied AI research and published work.
             </h2>
 
-            <p className="mt-5 max-w-xl leading-7 text-zinc-600 dark:text-zinc-300">
-              Published work in behavioral-health NLP, human-in-the-loop
-              learning, attention-based models, and applied artificial
-              intelligence will be presented here.
-            </p>
+            <div className="mt-8 space-y-4">
+              {portfolio.publications.map((publication) => (
+                <a
+                  key={publication.title}
+                  href={publication.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-2xl border border-zinc-200 p-5 transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800"
+                >
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">
+                    {publication.authorship} · {publication.venue} · {publication.year}
+                  </p>
+
+                  <h3 className="mt-2 font-semibold leading-6">
+                    {publication.title}
+                  </h3>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
