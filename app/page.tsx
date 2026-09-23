@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import { portfolio } from "@/data/portfolio";
 
 const featuredProjects = [
   {
@@ -57,7 +58,7 @@ export default function Home() {
             </p>
 
             <h1 className="max-w-4xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
-              Martin Brown
+              {portfolio.name}
             </h1>
 
             <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-600 dark:text-zinc-300">
@@ -149,6 +150,72 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+{/* Experience */}
+<section
+  id="experience"
+  className="mx-auto max-w-6xl px-6 py-24 sm:px-8"
+>
+  <div className="mb-12">
+    <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
+      Experience
+    </p>
+
+    <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+      Industry and applied AI experience.
+    </h2>
+  </div>
+
+  <div className="space-y-6">
+    <article className="rounded-3xl border border-zinc-200 p-7 dark:border-zinc-800">
+      <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+        <div>
+          <h3 className="text-xl font-semibold">
+            Data Scientist
+          </h3>
+
+          <p className="mt-1 text-zinc-600 dark:text-zinc-300">
+            Equifax · Atlanta, Georgia
+          </p>
+        </div>
+
+        <p className="text-sm text-zinc-500">
+          2022 – 2024
+        </p>
+      </div>
+
+      <p className="mt-5 max-w-4xl leading-7 text-zinc-600 dark:text-zinc-300">
+        Developed statistical and machine learning solutions for large-scale
+        credit-risk data, including time-series modeling, SQL-based data
+        pipelines, model evaluation, and cloud-based implementation.
+      </p>
+    </article>
+
+    <article className="rounded-3xl border border-zinc-200 p-7 dark:border-zinc-800">
+      <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+        <div>
+          <h3 className="text-xl font-semibold">
+            Data Science Researcher
+          </h3>
+
+          <p className="mt-1 text-zinc-600 dark:text-zinc-300">
+            Kennesaw State University
+          </p>
+        </div>
+
+        <p className="text-sm text-zinc-500">
+          Applied AI Research
+        </p>
+      </div>
+
+      <p className="mt-5 max-w-4xl leading-7 text-zinc-600 dark:text-zinc-300">
+        Conducted applied AI and NLP research focused on behavioral-health
+        detection from public-safety narratives, human-in-the-loop learning,
+        attention-based neural models, and collaboration with domain experts.
+      </p>
+    </article>
+  </div>
+</section>
 
       {/* Project Lab + Background */}
       <section className="border-y border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/40">
