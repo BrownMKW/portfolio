@@ -174,7 +174,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-5">
-            {experience.map((item) => (
+            {portfolio.experience.map((item) => (
               <article
                 key={`${item.role}-${item.organization}`}
                 className="rounded-3xl border border-zinc-200 bg-white p-7 dark:border-zinc-800 dark:bg-zinc-950"

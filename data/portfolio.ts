@@ -40,4 +40,42 @@ export const portfolio = {
       tags: ["Adaptive Learning", "ML", "AI"],
     },
   ],
+
+  experience: [
+    {
+      role: "Assistant Professor of Computer Science",
+      organization: "Kennesaw State University",
+      dates: "Jan 2025 – Present",
+      description:
+        "Teach undergraduate and graduate courses across machine learning, NLP, deep learning, artificial intelligence, AI and robotics, cryptography, and big data analytics.",
+    },
+    {
+      role: "Data Science Researcher | Behavioral Health NLP",
+      organization: "Kennesaw State University",
+      dates: "Sep 2022 – Present",
+      description:
+        "Applied AI and NLP research focused on behavioral-health detection from public-safety narratives, human-in-the-loop learning, attention-based models, and decision-support systems.",
+    },
+    {
+      role: "Data Scientist",
+      organization: "Equifax",
+      dates: "Jan 2022 – Sep 2024",
+      description:
+        "Developed statistical and machine-learning solutions for large-scale consumer credit-risk data, including time-series modeling, SQL-based data pipelines, model evaluation, and cloud implementation.",
+    },
+    {
+      role: "Data Scientist",
+      organization: "U.S. Army",
+      dates: "Sep 2020 – Sep 2022",
+      description:
+        "Developed data-processing and modeling pipelines for real-world physiological and passenger-driving data, including ECG and heart-rate variability analysis.",
+    },
+    {
+      role: "Graduate Teaching Assistant",
+      organization: "Murray State University",
+      dates: "Oct 2018 – May 2020",
+      description:
+        "Co-developed and co-taught developmental mathematics coursework while supporting students transitioning into college-level mathematics.",
+    },
+  ],
 };
