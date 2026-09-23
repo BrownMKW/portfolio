@@ -1,15 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 export default function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const links = [
     { label: "Projects", href: "#projects" },
@@ -48,17 +42,16 @@ export default function Navbar() {
               ))}
             </div>
 
-            {mounted && (
-              <button
-                type="button"
-                onClick={toggleTheme}
-                aria-label="Toggle light and dark mode"
-                title="Toggle light and dark mode"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 text-sm transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
-              >
-                {resolvedTheme === "dark" ? "☀" : "☾"}
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Toggle light and dark mode"
+              title="Toggle light and dark mode"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 text-sm transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+            >
+              <span className="dark:hidden">☾</span>
+              <span className="hidden dark:inline">☀</span>
+            </button>
           </div>
         </div>
 
