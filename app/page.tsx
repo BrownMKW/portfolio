@@ -2,44 +2,6 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { portfolio } from "@/data/portfolio";
 
-const featuredProjects = [
-  {
-    name: "ATLAS",
-    description:
-      "A personal AI operating system focused on knowledge retrieval, memory, tools, and intelligent workflows.",
-    status: "In Development",
-    tags: ["AI", "RAG", "LLMs", "Full Stack"],
-  },
-  {
-    name: "FoodFlow",
-    description:
-      "An intelligent food platform combining recommendations, inventory awareness, personalization, and forecasting.",
-    status: "Planned",
-    tags: ["Recommenders", "ML", "Forecasting"],
-  },
-  {
-    name: "SignalTrack",
-    description:
-      "Predictive trend intelligence for changing markets, prices, and career data over time.",
-    status: "Planned",
-    tags: ["Data Engineering", "NLP", "Time Series"],
-  },
-  {
-    name: "RoamPlan",
-    description:
-      "An intelligent planning system combining recommendations, routing, constraints, and real-world discovery.",
-    status: "Planned",
-    tags: ["Optimization", "Graphs", "AI"],
-  },
-  {
-    name: "SkillForge",
-    description:
-      "An adaptive learning engine designed to estimate mastery, identify weaknesses, and choose what to teach next.",
-    status: "Planned",
-    tags: ["Adaptive Learning", "ML", "AI"],
-  },
-];
-
 const experience = [
   {
     role: "Assistant Professor of Computer Science",
@@ -159,7 +121,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {featuredProjects.map((project) => (
+          {portfolio.featuredProjects.map((project) => (
             <article
               key={project.name}
               className="group rounded-3xl border border-zinc-200 bg-zinc-50 p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900"
