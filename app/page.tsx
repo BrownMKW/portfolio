@@ -213,6 +213,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Education */}
+      <section
+        id="education"
+        className="mx-auto max-w-6xl px-6 py-24 sm:px-8"
+      >
+        <div className="mb-12">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
+            Education
+          </p>
+
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Academic background.
+          </h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {portfolio.education.map((item) => (
+            <article
+              key={`${item.degree}-${item.institution}`}
+              className="rounded-3xl border border-zinc-200 p-7 dark:border-zinc-800"
+            >
+              <p className="text-sm text-zinc-500">{item.dates}</p>
+
+              <h3 className="mt-3 text-xl font-semibold">{item.degree}</h3>
+
+              <p className="mt-2 font-medium text-zinc-700 dark:text-zinc-200">
+                {item.field}
+              </p>
+
+              <p className="mt-4 leading-7 text-zinc-600 dark:text-zinc-300">
+                {item.institution}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {/* Project Lab + Research */}
       <section>
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 sm:px-8 lg:grid-cols-2">

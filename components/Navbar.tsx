@@ -25,6 +25,13 @@ export default function Navbar() {
           </a>
 
           <a
+            href="#education"
+            className="transition hover:text-zinc-950 dark:hover:text-white"
+          >
+            Education
+          </a>
+
+          <a
             href="#lab"
             className="transition hover:text-zinc-950 dark:hover:text-white"
           >
