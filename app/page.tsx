@@ -285,7 +285,7 @@ export default function Home() {
 
           <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
             Interested in data science and analytics, machine learning, or AI
-            engineering?
+            engineering postions.
           </h2>
 
           <p className="mt-5 max-w-2xl leading-7 opacity-70">
