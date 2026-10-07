@@ -5,30 +5,7 @@ import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import SectionHeader from "@/components/SectionHeader";
 import { portfolio } from "@/data/portfolio";
-
-const technicalStudies = [
-  {
-    category: "Algorithms · Graph Theory",
-    title: "Exam Timetabling with Greedy Graph Coloring",
-    description:
-      "Constructed an exam-conflict graph from 33,996 enrollment records covering 7,896 students and 800 exams, then applied largest-first greedy graph coloring to produce a feasible 18-timeslot schedule.",
-    tags: ["Python", "NetworkX", "Graph Theory", "Scheduling"],
-  },
-  {
-    category: "Statistical Modeling",
-    title: "Hierarchical and Longitudinal Modeling in R",
-    description:
-      "Applied two- and three-level mixed-effects models to educational and longitudinal datasets, including random effects, ICC estimation, growth modeling, cross-level interactions, and variance decomposition.",
-    tags: ["R", "lme4", "Mixed Effects", "Longitudinal Analysis"],
-  },
-  {
-    category: "Bayesian Statistics",
-    title: "Bayesian Probit and Finite-Mixture Modeling",
-    description:
-      "Applied MCMC-based latent-variable models including binary and ordered probit regression and finite-mixture regression, with posterior estimation, credible intervals, latent classes, and model comparison.",
-    tags: ["Python", "Bayesian Statistics", "MCMC", "Mixture Models"],
-  },
-];
+import { featuredTechnicalStudies } from "@/data/technicalStudies";
 
 export default function Home() {
   const featuredProjects = portfolio.featuredProjects.filter(
@@ -324,7 +301,7 @@ export default function Home() {
         </p>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {technicalStudies.map((study) => (
+          {featuredTechnicalStudies.map((study) => (
             <article
               key={study.title}
               className="rounded-3xl border border-zinc-200 bg-white p-7 transition duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-700"
@@ -338,9 +315,8 @@ export default function Home() {
               </h3>
 
               <p className="mt-4 leading-7 text-zinc-600 dark:text-zinc-300">
-                {study.description}
+                {study.summary}
               </p>
-
               <div className="mt-6 flex flex-wrap gap-2">
                 {study.tags.map((tag) => (
                   <span
